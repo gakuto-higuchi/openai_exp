@@ -1,0 +1,13 @@
+services:
+  openai-exp:
+    image: openai-exp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      - PYTHONPATH=/root/app
+    tty: true
+    volumes:
+      - ../app:/root/app/
